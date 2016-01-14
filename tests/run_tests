@@ -47,7 +47,7 @@ function test_against_file()
 {
   file=$1
   echo "Compiling $file"
-  `$COMPILER $file $SOURCE $INCLUDES -o ${file:0:${#file}-4} -g`
+  `$COMPILER $file $SOURCE $INCLUDES -o ${file:0:${#file}-4} -lstdc++ -g`
   out=$?
   if [ ! $out -eq 0 ]; then
     echo "Compile failed!"
